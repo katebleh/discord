@@ -2,13 +2,13 @@
  * @name kate
  * @description a thing :3
  * @author kate
- * @version 2023.0831.1
+ * @version 2023.0831.2
  * @authorId 458287191362371584
  * @website https://github.com/katebleh/discord
  * @source https://github.comkatebleh/discord/blob/main/kate-bleh.theme.css
  */
 
- :root, html, body {
+:root, html, body {
     /* this controls the colour of the page!
     set it to a number between -333 and 333 */
     --base-hue: calc(var(--saturation-factor) * 270);
@@ -404,7 +404,8 @@
 [class*=sidebar-] > [class*=panels-],
 [class*=channelTextArea-],
 [class*=attachedBars-],
-[class*=container-]
+[class*=container-],
+[aria-label="Private channels"] > [class*=searchBar-] + [class*=scroller-]
 {
     background: transparent !important;
 }
@@ -461,7 +462,8 @@ a
 
 /* headers */
 [aria-label="Channel header"],
-[class*=sidebar-] nav > [class*=clickable-]
+[class*=sidebar-] nav > [class*=clickable-],
+[aria-label="Private channels"] > [class*=searchBar-]
 {
     margin-bottom: 10px;
 }
@@ -481,8 +483,7 @@ a
     border-top-right-radius: 10px;
     scrollbar-width: thin;
 }
-[class*=sidebar-] nav > [class*=scroller-] > ul,
-[class*=privateChannels-] [class*=scroller-] > ul
+[class*=sidebar-] nav > [class*=scroller-] > ul
 {
     background-color: var(--background-primary);
     border-top-left-radius: 10px;
